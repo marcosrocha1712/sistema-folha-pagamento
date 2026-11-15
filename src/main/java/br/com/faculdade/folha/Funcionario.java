@@ -13,6 +13,12 @@ public class Funcionario {
     }
 
     public void aplicarDesconto(double valor) {
+        if (valor > salarioBase - desconto) {
+            throw new IllegalArgumentException(
+                    "O desconto não pode ser maior que o salário disponível."
+            );
+        }
+
         this.desconto += valor;
     }
 

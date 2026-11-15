@@ -1,5 +1,5 @@
 package br.com.faculdade.folha;
-
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -24,5 +24,11 @@ public class FuncionarioTest {
 
         assertEquals(2700.00, salarioLiquido, 0.001);
     }
+    @Test
+    void naoDevePermitirDescontoMaiorQueSalario() {
+        Funcionario funcionario = new Funcionario("Carlos", 3000.00);
 
+        assertThrows(IllegalArgumentException.class,
+                () -> funcionario.aplicarDesconto(3500.00));
+    }
 }

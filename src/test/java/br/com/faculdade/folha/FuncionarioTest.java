@@ -31,4 +31,12 @@ public class FuncionarioTest {
         assertThrows(IllegalArgumentException.class,
                 () -> funcionario.aplicarDesconto(3500.00));
     }
+    @Test
+    void deveIdentificarFuncionarioPorId() {
+        Funcionario funcionario = new Funcionario("João", 3000.00);
+
+        funcionario.setId(1);
+
+        assertEquals(1, funcionario.getId());
+    }
 }

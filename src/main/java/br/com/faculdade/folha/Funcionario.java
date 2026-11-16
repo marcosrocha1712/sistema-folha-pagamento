@@ -1,7 +1,7 @@
 package br.com.faculdade.folha;
 
 public class Funcionario {
-
+    private int id;
     private String nome;
     private double salarioBase;
     private double desconto;
@@ -21,8 +21,14 @@ public class Funcionario {
 
         this.desconto += valor;
     }
-
     public double calcularSalarioLiquido() {
         return salarioBase - desconto;
+    }
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
     }
 }
